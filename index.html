@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завивка волос на трусы</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f0fe;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background: #6a82fb;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            animation: slideDown 0.5s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #96a7ff;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.5s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h2 {
+            color: #6a82fb;
+        }
+
+        .slider {
+            position: relative;
+            margin: 20px 0;
+            max-width: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slider img {
+            width: 100%;
+            display: none; /* Скрываем все изображения по умолчанию */
+            transition: opacity 0.5s ease-in-out; /* Плавный переход */
+        }
+
+        .slider img.active {
+            display: block; /* Показываем текущее изображение */
+        }
+
+        .slider button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 18px;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+
+        .slider button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .slider .prev {
+            left: 10px;
+        }
+
+        .slider .next {
+            right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .highlight {
+            background-color: #fce8e8;
+            padding: 10px;
+            border-left: 5px solid #fc5c7d;
+        }
+
+        .tips {
+            list-style: square;
+            padding-left: 20px;
+        }
+
+        .spacer {
+            margin-bottom: 20px;
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .photo-gallery img {
+            width: calc(33.33% - 10px);
+            border-radius: 10px;
+            transition: transform 1.5s;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .button {
+            background-color: #6a82fb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #fc5c7d;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+
+            .photo-gallery img {
+                width: calc(50% - 10px);
+            }
+
+            .slider img {
+                max-width: 100%;
+            }
+
+            section {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .photo-gallery img {
+                width: 100%;
+            }
+
+            nav {
+                position: static;
+                margin: 10px 0;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Завивка волос на трусы</h1>
+        <nav>
+            <ul>
+                <li><a href="#twisting">Как закручивать</a></li>
+                <li><a href="#tips">Советы по трусам</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>О нас</h2>
+        <p>Мы предлагаем уникальный метод завивки волос с использованием трусов! Этот способ позволяет получить красивые локоны без использования горячих инструментов, что делает его безопасным и доступным для всех.</p>
+        <p>Наша цель – поделиться с вами секретами укладки волос, чтобы вы могли выглядеть великолепно в любое время и в любом месте.</p>
+    </section>
+    
+    <section id="howto">
+        <h2>Как завивать волосы на трусы</h2>
+        <ol>
+            <li><strong>Подготовьте волосы:</strong> вымойте и высушите их полотенцем. Убедитесь, что волосы немного влажные, но не мокрые.</li>
+            <li><strong>Нанесите термозащитное средство:</strong> это поможет защитить ваши волосы от повреждений.</li>
+            <li><strong>Разделите волосы на пряди:</strong> используйте заколки, чтобы держать волосы в порядке.</li>
+            <li><strong>Выберите трусы:</strong> лучше всего подходят хлопковые трусы, так как они хорошо удерживают форму. Убедитесь, что они чистые и без каких-либо повреждений.</li>
+            <li><strong>Обмотайте прядь вокруг трусов:</strong> начните от корней и обматывайте прядь вокруг трусов, фиксируя ее на конце.</li>
+            <li><strong>Закрепите прядь:</strong> оставьте трусы на несколько часов или на ночь для достижения наилучшего результата. Вы можете использовать заколки, чтобы закрепить трусы, если это необходимо.</li>
+            <li><strong>Снимите трусы:</strong> аккуратно снимите трусы и наслаждайтесь локонами! Используйте лак для волос, чтобы закрепить результат.</li>
+        </ol>
+    </section>
+
+    <section id="twisting">
+        <h2>Как закручивать волосы на трусы</h2>
+        <div class="spacer"></div>
+        <p>Закручивание волос на трусы — это творческий процесс, который может добавить уникальности вашему стилю. Вот пошаговая инструкция, как это сделать:</p>
+        
+        <h3>Вам понадобятся:</h3>
+        <ul class="tips">
+            <li>Чистые и сухие волосы</li>
+            <li>Расческа</li>
+            <li>Утюжок или плойка для завивки (по желанию)</li>
+            <li>Резинки для волос</li>
+            <li>Лак для волос (по желанию)</li>
+            <li>Трусы (по вашему выбору)</li>
+        </ul>
+
+        <h3>Пошаговая инструкция:</h3>
+        <ol>
+            <li>
+                <strong>Подготовка волос:</strong>
+                <p>Начните с чистых и сухих волос. Убедитесь, что они хорошо расчесаны, чтобы избежать запутываний.</p>
+            </li>
+            <li>
+                <strong>Создание прядей:</strong>
+                <p>Разделите волосы на небольшие пряди. Чем меньше пряди, тем более аккуратные завитки вы получите.</p>
+            </li>
+            <li>
+                <strong>Завивка волос (опционально):</strong>
+                <p>Если вы хотите добавить объем или текстуру, используйте утюжок или плойку, чтобы завить пряди. Это придаст вашим волосам дополнительный стиль.</p>
+            </li>
+            <li>
+                <strong>Закрутка прядей:</strong>
+                <p>Возьмите одну прядь волос и аккуратно закрутите ее, начиная с корней и двигаясь вниз. Вы можете закручивать в разные стороны для создания разнообразных эффектов.</p>
+            </li>
+            <li>
+                <strong>Закрепление на трусах:</strong>
+                <p>Уложите закрученную прядь на трусы, стараясь расположить ее так, чтобы она не мешала и выглядела аккуратно. Зафиксируйте прядь резинкой или просто уложите ее.</p>
+            </li>
+            <li>
+                <strong>Повторите процесс:</strong>
+                <p>Продолжайте закручивать и укладывать остальные пряди, стараясь поддерживать симметрию и стиль.</p>
+            </li>
+            <li>
+                <strong>Фиксация:</strong>
+                <p>При желании используйте лак для волос, чтобы зафиксировать укладку и продлить ее стойкость.</p>
+            </li>
+            <li>
+                <strong>Финальный штрих:</strong>
+                <p>Проверьте, чтобы все пряди были аккуратно уложены и выглядели гармонично. При необходимости добавьте аксессуары для завершения образа.</p>
+            </li>
+        </ol>
+
+        <h3>Советы:</h3>
+        <ul class="tips">
+            <li>Экспериментируйте с различными стилями закрутки, чтобы найти тот, который подходит именно вам.</li>
+            <li>Используйте термозащитные средства, если применяете горячие инструменты, чтобы защитить волосы.</li>
+            <li>Не забывайте о регулярном уходе за волосами, чтобы они оставались здоровыми и красивыми.</li>
+        </ul>
+    </section>
+    
+    <section id="tips">
+        <h2>Советы по выбору трусов для завивки</h2>
+        <div class="highlight">
+            <p>При выборе трусов для завивки волос обратите внимание на следующие моменты:</p>
+            <ul class="tips">
+                <li><strong>Материал:</strong> выбирайте хлопок или другие натуральные ткани, которые хорошо удерживают форму и не повреждают волосы.</li>
+                <li><strong>Размер:</strong> трусы должны быть достаточно большими, чтобы обернуть вокруг них прядь волос, но не слишком большими, чтобы не скользить.</li>
+                <li><strong>Цвет:</strong> выбирайте яркие или светлые цвета, чтобы они не оставляли следов на волосах.</li>
+                <li><strong>Дизайн:</strong> трусы с простым дизайном без лишних деталей и резинок лучше всего подходят для завивки.</li>
+                <li><strong>Удобство:</strong> выбирайте трусы, которые вам удобно носить, чтобы вы могли легко оставаться с ними в течение длительного времени.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="underwear-gallery">
+        <h2>Галерея трусов</h2>
+        <div class="photo-gallery">
+            <img src="4.jpg" alt="Трусы 1">
+            <img src="5.jpg" alt="Трусы 2">
+            <img src="6.jpg" alt="Трусы 3">
+        </div>
+        <p>На этих фотографиях представлены различные варианты трусов, которые подходят для завивки волос. Обратите внимание на материал и дизайн!</p>
+    </section>
+    
+    <section id="gallery">
+        <h2>Галерея завивки</h2>
+        <div class="slider">
+            <img src="1.jpg" alt="Завивка 1" class="active">
+            <img src="2.jpg" alt="Завивка 2">
+            <img src="3.jpg" alt="Завивка 3">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <h2>Контакты</h2>
+        <p>Email: naebBButy@example.com</p>
+        <p>Телефон: +7 (945) 156-22-00</p>
+        <button class="button">Связаться с нами</button>
+    </footer>
+
+    <script>
+        // Простой слайдер
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider img');
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active'); // Убираем класс active
+                img.style.display = 'none'; // Скрываем все изображения
+            });
+            images[index].classList.add('active'); // Добавляем класс active к текущему изображению
+            images[index].style.display = 'block'; // Показываем текущее изображение
+        }
+
+        function changeSlide(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length; // Изменяем индекс
+            showImage(currentIndex);
+        }
+
+        showImage(currentIndex);
+
+        setInterval(() => {
+            changeSlide(1); // Автоматический переход к следующему изображению
+        }, 3000);
+    </script>
+</body>
+</html>
+
